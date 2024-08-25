@@ -18,6 +18,7 @@ echo $cart->add($product)->getTotalPrice() . PHP_EOL;
 echo $cart->add($product2)->getTotalPrice() . PHP_EOL;
 echo $cart->add($phone)->getTotalPrice() . PHP_EOL;
 echo $cart->add($book)->getTotalPrice() . PHP_EOL;
+echo $cart->getCountOfProducts() . PHP_EOL;
 //
 // echo $product2->info() . PHP_EOL;
 // echo $book->info() . PHP_EOL;

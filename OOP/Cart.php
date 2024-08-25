@@ -3,9 +3,11 @@
 class Cart{
 
   private array $data = [];
+  private static int $count = 0;
 
   public function add(Product $product): static{
     $this->data[] = $product;
+    self::$count++;                                // таким чином (self::) ми даємо зрозуміти що працюэмо зы статичнимполями класу 
     return $this;
   }
 
@@ -16,5 +18,9 @@ class Cart{
       $total += $item->getPrice();
     }
     return $total;
+  }
+  
+  public static function getCountOfProducts(): string {
+      return 'Product count: ' . self::$count;
   }
 }
