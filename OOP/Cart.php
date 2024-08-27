@@ -7,7 +7,7 @@ class Cart{
 
   public function add(Product $product): static{
     $this->data[] = $product;
-    self::$count++;                                // таким чином (self::) ми даємо зрозуміти що працюэмо зы статичнимполями класу 
+    self::$count++;                                // таким чином (self::) ми даємо зрозуміти що працюэмо зі статичними полями класу 
     return $this;
   }
 

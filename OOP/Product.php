@@ -5,7 +5,7 @@ class Product
   public function __construct(
     protected string $title,
     protected int $price
-  )
+)
   {
   }
   public function sayHello(): string{
