@@ -1,5 +1,7 @@
 <?php
 
+namespace OOP;
+
 class Cart{
 
   private array $data = [];

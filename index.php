@@ -1,58 +1,61 @@
 <?php
 
-require_once 'FunctionsExamples.php';
 
-echo PHP_VERSION.'<br>';
+/**
+ * require і require_once це один зі способів імпорту класів.
+ * далі буде приклад імпорту за допомогою namespace та slp_autoload_register()
+ */
+//require __DIR__ . '/Product.php';
+//require __DIR__ . '/Phone.php';
+//require __DIR__ . '/Cart.php';
+//require_once 'Book.php';
+//require_once 'Shape.php';
+//require_once 'IShape.php';
+//require_once 'Circle.php';
+//require_once 'Rectangle.php';
+//require_once 'Triangle.php';
+
+use OOP\Product;
+use OOP\Cart;
+use OOP\Phone;
+use OOP\Book;
+use OOP\Circle;
+use OOP\Rectangle;
+use OOP\Triangle;
 
 
-$number1 = 5;
-$string = "Hello";
-	echo $number1 . "  " . $string . "  " . "Hello World!";
-  echo "<input type=\"text\">".'<br>';
-$number2 = 6;
-if($number1 == $number2){
-  echo $number1 + $number2;
-}else {
-  echo "numbers is not equals" . '<br>';
+function autoloader($class) {
+    $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
+    $file = __DIR__ . "/{$class}.php";
+    if (file_exists($file)) {
+        require_once $file;
+    }
 }
-// for cycle
-	for ($i = 10; $i <= 20; $i++)
-		echo $i . " for " . '<br>';
+spl_autoload_register('autoloader');
 
-// while cycle
-	while ($j <= 10) {
-		echo $j . " while ";
-		$j++;
-	}
 
-// do while cycle
-	$i = 100;
-	do{
-		echo '<br>' . $i . " do while ". '<br>';
-	} while( $i < 10);
+$product = new Product('Some product', 1000);
+$product2 = new Product('Some product 2', 500); 
+$book = new Book('Story Book', 10000, 480);
+$phone = new Phone('Samsung', 12000, 'galaxy');
+$cart = new Cart();
 
-// asociative array
-	$list = ["age" => 35, "name" => "Oleksandr", "hobby" => "coding"];
+echo $cart->add($product)->getTotalPrice() . PHP_EOL;
+echo $cart->add($product2)->getTotalPrice() . PHP_EOL;
+echo $cart->add($phone)->getTotalPrice() . PHP_EOL;
+echo $cart->add($book)->getTotalPrice() . PHP_EOL;
+echo $cart->getCountOfProducts() . PHP_EOL;
+echo Cart::getCountOfProducts() . PHP_EOL; // виклик статичного методу відбувається через оператор - ::
 
-// simple array
-	$arr = [5,5,6,8,9];
+ echo $product2->info() . PHP_EOL;
+ echo $book->info() . PHP_EOL;
+ echo $phone->info(). PHP_EOL;
+ echo $phone->getRealPrice() . PHP_EOL;
 
-// foreach cycle
-	 foreach ($list as $key => $value) {
-	 	echo "Key: $key. Value: $value. <br>";
-	 }
+$circle = new Circle(8, 'red');
+$rectangle = new Rectangle(45, 63, 'blue');
+$triangle = new Triangle(5,5,5);
 
-	 foreach ($arr as $value) {
-	 	echo "Value: $value.<br>";
-	 }
-//foreach cycle for simple array with indexes
-	 foreach ($arr as $i => $value) {
-		echo "Value: $value.<br>";
-	}
-$functionsExamples = new FunctionsExamples();
-$functionsExamples->printTitle();
-echo '<br>';
-$functionsExamples->value = 'Big';//Dynamic creation - bad practice!!! Because this variable is not exist
-var_dump($functionsExamples); // var_dump - this is object info method
-echo $functionsExamples->oddOrEven(17);
-echo $functionsExamples->evenOrOddByTernarOperator(24);
+echo $circle->describe(). PHP_EOL;
+echo $rectangle->describe(). PHP_EOL;
+echo $triangle->describe() . PHP_EOL;

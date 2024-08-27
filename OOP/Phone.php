@@ -1,5 +1,7 @@
 <?php
 
+namespace OOP;
+
 class Phone extends Product{
 
 // TODO раннє чи пізнє зв'язування?

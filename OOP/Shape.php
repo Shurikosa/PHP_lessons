@@ -1,5 +1,7 @@
 <?php
 
+namespace OOP;
+
 /**
  * Description of Transport
  *

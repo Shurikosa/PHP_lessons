@@ -1,5 +1,8 @@
 <?php
 
+namespace OOP;
+
+
 class Book extends Product {
     
     private const PUBLISHER = 'Eneyida';// константи до php 7.1 могли бути тільки публічними

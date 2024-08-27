@@ -1,6 +1,8 @@
 <?php
 
-class Product
+namespace OOP;
+
+class Product 
 {
   public function __construct(
     protected string $title,

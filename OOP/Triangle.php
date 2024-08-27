@@ -1,5 +1,8 @@
 <?php
 
+namespace OOP;
+
+use OOP\interfaces\IShape;
 /**
  * Description of Triangle
  *
