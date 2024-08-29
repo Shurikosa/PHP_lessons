@@ -2,7 +2,12 @@
 
 namespace OOP;
 
+use OOP\traits\TColor;
+
+
 class Phone extends Product{
+    
+    use TColor;
 
 // TODO раннє чи пізнє зв'язування?
   public function __construct(

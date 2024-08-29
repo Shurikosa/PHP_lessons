@@ -2,11 +2,18 @@
 
 namespace OOP;
 
+use OOP\Product;
+
 
 class Book extends Product {
+    /*
+     *  константи до php 7.1 могли бути тільки публічними
+        константи можна перевизначати в підкласах                  
+        належать класу тп. як статичні
+     */
+    private const PUBLISHER = 'Eneyida';
     
-    private const PUBLISHER = 'Eneyida';// константи до php 7.1 могли бути тільки публічними
-
+    
     public function __construct(
             string $title,
             int $price,
@@ -26,5 +33,13 @@ class Book extends Product {
     
     public function getPublisher(): string {
         return self::PUBLISHER;
+    }
+    
+    public function __toString() {
+        $result = parent::info();
+        $result .= "NUMBER OF PAGES: {$this->numberOfPages}" . PHP_EOL;
+        $result .= 'PUBLISHER: ' . self::PUBLISHER;
+        return $result;
+        
     }
 }

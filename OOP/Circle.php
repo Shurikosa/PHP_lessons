@@ -2,6 +2,8 @@
 
 namespace OOP;
 
+use OOP\Shape;
+
 /**
  * Description of Circle
  *

@@ -59,3 +59,12 @@ $triangle = new Triangle(5,5,5);
 echo $circle->describe(). PHP_EOL;
 echo $rectangle->describe(). PHP_EOL;
 echo $triangle->describe() . PHP_EOL;
+
+function debug($data){
+    echo PHP_EOL . print_r($data, 1) . PHP_EOL;
+}
+debug($phone);
+
+echo $book;
+
+ 

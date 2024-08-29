@@ -1,6 +1,8 @@
 <?php
 
 require_once 'FunctionsExamples.php';
+require_once 'A.php';
+require_once 'B.php';
 
 echo PHP_VERSION.'<br>';
 
@@ -55,4 +57,11 @@ echo '<br>';
 $functionsExamples->value = 'Big';//Dynamic creation - bad practice!!! Because this variable is not exist
 var_dump($functionsExamples); // var_dump - this is object info method
 echo $functionsExamples->oddOrEven(17);
-echo $functionsExamples->evenOrOddByTernarOperator(24);
+echo $functionsExamples->evenOrOddByTernarOperator(24) . PHP_EOL;
+
+$a = new A();
+$b = new B();
+$a->getTest();
+$a->getTest2();
+$b->getTest();
+$b->getTest2();
