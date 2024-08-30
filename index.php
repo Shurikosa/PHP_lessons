@@ -15,24 +15,30 @@
 //require_once 'Rectangle.php';
 //require_once 'Triangle.php';
 
-use OOP\Product;
-use OOP\Cart;
-use OOP\Phone;
-use OOP\Book;
-use OOP\Circle;
-use OOP\Rectangle;
-use OOP\Triangle;
 
 
-function autoloader($class) {
-    $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
-    $file = __DIR__ . "/{$class}.php";
-    if (file_exists($file)) {
-        require_once $file;
-    }
-}
-spl_autoload_register('autoloader');
+//use OOP\Product;
+//use OOP\Cart;
+//use OOP\Phone;
+//use OOP\Book;
+//use OOP\Circle;
+//use OOP\Rectangle;
+//use OOP\Triangle;
+//
+//
+//function autoloader($class) {
+//    $class = str_replace("\\", DIRECTORY_SEPARATOR, $class);
+//    $file = __DIR__ . "/{$class}.php";
+//    if (file_exists($file)) {
+//        require_once $file;
+//    }
+//}
+//spl_autoload_register('autoloader');
 
+//тут ми створюємо автозавантажувач composer 
+require __DIR__ . '/vendor/autoload.php';
+//групування залежностей
+use OOP\{Product, Cart, Phone, Book, Circle, Rectangle, Triangle};
 
 $product = new Product('Some product', 1000);
 $product2 = new Product('Some product 2', 500); 

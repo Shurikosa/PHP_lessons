@@ -1,6 +1,6 @@
 <?php
 
-namespace OOP\traits;
+namespace traits;
 /**
  * Description of TColor
  *

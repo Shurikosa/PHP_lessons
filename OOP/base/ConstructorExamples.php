@@ -1,5 +1,7 @@
 <?php
 
+namespace base;
+
 class ConstructorExamples{
 
 //constructor before php 8

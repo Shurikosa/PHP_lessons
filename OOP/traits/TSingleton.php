@@ -1,6 +1,6 @@
 <?php
 
-
+namespace traits;
 
 trait TSingleton {
     

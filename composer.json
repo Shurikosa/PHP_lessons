@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "OOP\\": "OOP",
+            "base\\": "OOP/base",
+            "interfaces\\": "OOP/interfaces",
+            "traits\\": "OOP/traits"
+        }
+    }
+}

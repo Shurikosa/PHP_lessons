@@ -2,8 +2,7 @@
 
 namespace OOP;
 
-use OOP\traits\TColor;
-
+use \traits\TColor;
 
 class Phone extends Product{
     

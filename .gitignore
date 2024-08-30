@@ -1,2 +1,4 @@
 /nbproject/private/
 /composer.phar
+/vendor/autoload.php
+/vendor/composer/

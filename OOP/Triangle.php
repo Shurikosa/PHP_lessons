@@ -2,7 +2,7 @@
 
 namespace OOP;
 
-use OOP\interfaces\IShape;
+use interfaces\IShape;
 /**
  * Description of Triangle
  *
